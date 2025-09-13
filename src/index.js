@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import fetchRoutes from "./routes/fetchRoutes.js";
 import preguntaIARoutes from './routes/PreguntaIA.js';
 import cors from 'cors';
+import chatRoutes from './routes/chatRoute.js';
 
 const app = express();
 
@@ -20,6 +21,8 @@ app.get("/", (req, res) => {
 app.use('/api', fetchRoutes)
 // Rutas de PreguntaIA
 app.use('/api', preguntaIARoutes);
+// Rutas de chat
+app.use('/api', chatRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);

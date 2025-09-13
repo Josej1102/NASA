@@ -18,3 +18,10 @@ model Sol {
   rawJson   String?                     // JSON string completa
   createdAt DateTime @default(now())
 }
+
+model Chat {
+  id        Int      @id @default(autoincrement())
+  question  String
+  answer    String
+  createdAt DateTime @default(now())
+}

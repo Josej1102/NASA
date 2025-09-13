@@ -46,4 +46,5 @@ export const fetchNasa = async () => {
 } catch (error) {
     console.error("Error fetching data from NASA API:", error);
   }
+  
 }
