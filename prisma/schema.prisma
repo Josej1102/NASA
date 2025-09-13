@@ -1,0 +1,20 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Sol {
+  id        String  @id                // sol id (p.ej. "1000")
+  earthDate String?                     // First_UTC
+  minTemp   Float?
+  maxTemp   Float?
+  avgTemp   Float?
+  pressure  Float?
+  windSpeed Float?
+  rawJson   String?                     // JSON string completa
+  createdAt DateTime @default(now())
+}
