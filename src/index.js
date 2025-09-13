@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import fetchRoutes from "./routes/fetchRoutes.js";
 import preguntaIARoutes from './routes/PreguntaIA.js';
+import cors from 'cors';
 
 const app = express();
 
@@ -9,6 +10,7 @@ const PORT = process.env.PORT || 3000;
 
 dotenv.config();
 app.use(express.json());
+app.use(cors());
 
 app.get("/", (req, res) => {
   res.send("Hello World!");

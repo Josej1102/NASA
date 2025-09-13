@@ -9,7 +9,7 @@ export const PreguntarOpenAi = async (req, res) => {
         }
 
         const respuesta = await Preguntar(pregunta);
-        res.status(200).json({ respuesta });
+        res.status(200).json({respuesta} );
     } catch (error) {
         console.error("Error en PreguntarOpenAi:", error);
         res.status(500).json({ error: "Error al procesar la pregunta" });
